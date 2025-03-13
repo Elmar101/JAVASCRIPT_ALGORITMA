@@ -1,4 +1,4 @@
-First Question 
+First Question (User name validation)
 --------------
 
 1.the user name is between 4 and 25 characters
@@ -11,7 +11,7 @@ solition: userValidation.js
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Second Question
+Second Question (Longest Word in sentence)
 ---------------
 
-Longest Word in sentence
+1. ignore punctuation and assume sentence will not be empty

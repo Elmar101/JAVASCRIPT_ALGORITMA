@@ -21,3 +21,31 @@ const userNameValidation =(str) => {
 };
 
 console.log(userNameValidation(str));
+
+/*
+(/^[a-zA-Z0-9_]+$/).test(str) => izahi
+Regex-in hissə-hissə izahı:
+1. ^ (Başlanğıc işarəsi)
+Bu simvol müqayisənin mütləq mətnin əvvəlindən başlamalı olduğunu bildirir.
+Əgər bu simvol olmasa, mətnin istənilən yerində uyğunluq tapıla bilər.
+Məsələn:
+^abc → "abcde" uyğun gəlir, amma "xabc" uyğun gəlmir.
+2. [a-zA-Z0-9_] (İcazə verilən simvollar)
+a-z → Kiçik hərfləri əhatə edir (a-dan z-yə kimi).
+A-Z → Böyük hərfləri əhatə edir (A-dan Z-yə kimi).
+0-9 → Rəqəmləri əhatə edir (0-dan 9-a kimi).
+_ → Alt xətt (underscore) simvoluna icazə verir.
+Bu bölmə yalnız bu simvollara icazə verir, başqa heç bir simvol uyğun gəlməyəcək.
+
+3. + (Bir və ya daha çox təkrarlanma)
+Bu operator, əvvəlində olan [a-zA-Z0-9_] dəstinə aid simvolların bir və ya daha çox dəfə təkrarlanmasına icazə verir.
+Yəni:
+a, 1, A, _ – uyğun gəlir (çünki ən azı bir simvol var).
+abc123_ABC – uyğun gəlir (çünki simvolların hamısı icazə verilənlərdəndir və ən azı bir dəfə mövcuddur).
+Boş sətir ("") uyğun gəlmir, çünki + bir simvol tələb edir.
+4. $ (Son işarəsi)
+Bu simvol uyğunlaşdırmanın mütləq mətnin sonunda bitməli olduğunu bildirir.
+Əgər $ olmasaydı, regex istənilən yerində uyğun gələn bir hissəni tapardı.
+Məsələn:
+abc$ → "abc" uyğun gəlir, amma "abcde" uyğun gəlmir.
+*/
