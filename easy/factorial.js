@@ -10,9 +10,10 @@ Factorial
 
 function factorial1(n) {
    let fct = 1;
-   for (var i = 0; i < n; i++) {
+   for (let i = 2; i <= n; i++) {
      fct *= i;
    }
+   return fct;
 }
 
 console.log(factorial1(4));
