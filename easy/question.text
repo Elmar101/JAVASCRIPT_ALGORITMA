@@ -1,5 +1,5 @@
-First Question (User name validation)
---------------
+* First Question (User name validation)
+  --------------
 
 1.the user name is between 4 and 25 characters
 2.it must start with a letter
@@ -9,13 +9,74 @@ First Question (User name validation)
 const str=u__hello__words123; 
 solition: userValidation.js
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Second Question (Longest Word in sentence)
----------------
 
+* Second Question (Longest Word in sentence)
+  ---------------
 1. ignore punctuation and assume sentence will not be empty
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-Third Question (Factorial)
---------------
+
+
+* Third Question (Factorial)
+  --------------
+
+
+* Fourth Question (Reverse a string)
+  --------------
+
+
+* Fifth Question (find intersection)
+  --------------
+
+  Have the function findIntersection(strArr) read the array of strings stored in strArr which will contain two elements: 
+  the first element will represent a list of comma-separated numbers sorted in ascending order, 
+  the second element will represent a second list of comma-separated numbers (also sorted). 
+  Your goal is to return a comma-separated string containing the numbers that occur in elements of strArr in sorted order. 
+  If there is no intersection, return the string false.
+
+
+
+* Sixth Question (Questions Mark)
+  --------------
+
+  Have the function QuestionsMarks(str) take the str string parameter, which will contain single digit numbers, letters, and question marks, 
+  and check if there are exactly 3 question marks between every pair of two numbers that add up to 10. 
+  If so, then your program should return the string true, otherwise it should return the string false. 
+  If there are not two numbers that add up to 10 in the string, then your program should return false as well. 
+
+  for example:  QuestionsMarks("aa6?9") should return true because there are exactly 3 question marks between 6 and 9. 
+  QuestionsMarks("acc?7??sss?3rr1??????5") should return true.
+  QuestionsMarks("5??aaaaaaaaaaaaaaaaaaa?5?5") should return false.
+  QuestionsMarks("9???1???9???1???9") should return false.
+
+  
+
+  * Question seven (Letter Changes)
+  --------------
+
+  Using the JavaScript, have the function letterChanges(str) take the str parameter being passed and modify it using the following algorithm
+
+  1. Replace every letter in the string with the letter following it in the alphabetic (ie c becomes d , z becomes a)
+  2. The Capitalize every vowel in the new string (a, e, i, o, u) and modify finally return this modify string
+
+
+
+
+  * Question eight (Letter Capitalize)
+   --------------
+
+    Using the JavaScript, have the function letterCapitalize(str)  take the str parameter  being passed and Capitalize the first letter of each word
+    words will be separated by only one space
+
+
+
+  * Question nine (Simple Symbols)
+   --------------                                                                     
+*  Using the JavaScript language, have the function SimpleSymbols(str) take the str    *
+*  parameter being passed and determine if it is an acceptable sequence by either      *
+*  returning the string true or false. The str parameter will be composed of + and =   *
+*  symbols with several letters between them (ie. ++d+===+c++==a) and for the string   *
+*  to be true each letter must be surrounded by a + symbol. So the string to the left  *
+*  would be false. The string will not be empty and will have at least one letter.
+
+

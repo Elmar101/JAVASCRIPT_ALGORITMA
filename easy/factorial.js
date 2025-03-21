@@ -23,7 +23,7 @@ function factorial2(n) {
   if (n === 0) {
     return 1;
   }
-  return n * factorial2(n - 1);
+  return n * factorial2(n - 1); //4 * factorial2(3) = 3 * factorial2(2) = 2 * factorial2(1) = 1 * factorial2(0) = 1
 }
 
 console.log(factorial2(4));
