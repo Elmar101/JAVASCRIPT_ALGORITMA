@@ -14,6 +14,19 @@ const longestWord = (sentence) => {
 
 console.log(longestWord(sentence));
 
+function longestWordReduce(sen) { 
+  return sen.match(/w+/g).reduce((item, next) => item.length >= next.length ? item : next);  
+}
+console.log(longestWordReduce(sentence)); // time
+  
+
+
+
+
+
+
+
+
 /*
 
 Bu JavaScript kodu aşağıdakı şəkildə işləyir:
@@ -59,15 +72,11 @@ Sadəcə sözlər və boşluqlarla işləmək üçün mətn formatlamaq.
 Rəqəmləri saxlamaq üçün 0-9-u icazə verilən simvollara əlavə edə bilərik:
 
 javascript
-Copy
-Edit
 sentence.replace(/[^a-zA-Z0-9 ]/g, "")
 Bu halda yalnız xüsusi simvollar silinəcək, amma rəqəmlər saxlanacaq.
 Misal:
 
 javascript
-Copy
-Edit
 let text = "Price: $100! Discount: 20%";
 console.log(text.replace(/[^a-zA-Z0-9 ]/g, ""));
 Çıxış: "Price 100 Discount 20"
@@ -75,5 +84,50 @@ console.log(text.replace(/[^a-zA-Z0-9 ]/g, ""));
 Nəticə
 Bu kod yalnız ingilis hərflərini və boşluqları saxlamaq, digər bütün simvolları silmək üçündür.
 Əgər rəqəmlər qalmalıdırsa, 0-9 diapazonunu regex-ə əlavə etmək lazımdır.
+
+Regex ifadəsi olan /\w+/g-ni bir daha sadə və aydın şəkildə izah edim.
+
+Regex ifadəsinin tərkibi:
+/ və / - Regex ifadəsini başlatır və bitirir.
+
+\w - Bu xüsusi simvol "word character" (söz simvolu) adlanır və aşağıdakı simvolları ifadə edir:
+
+Böyük və kiçik hərflər: A-Z, a-z
+
+Rəqəmlər: 0-9
+
+Alt xətt: _
+
+Yəni, \w deməkdir: [A-Za-z0-9_]
+Edit
+[A-Za-z0-9_] Bu o deməkdir ki, söz simvolu hər hansı bir hərf, rəqəm və ya alt xətt ola bilər.
+
++ - Kvantifikator olub bildirir ki:
+
+Bir və ya daha çox dəfə uyğun gələn simvolları tap.
+
+g (global flag) - Regex ifadəsinin qlobal axtarış etməsini təmin edir:
+
+Yəni, uyğun gələn bütün hissələri tapır, təkcə birinci uyğunluğu deyil.
+
+Misal üzərində izah:
+javascript
+const text = "Salam dünya_123! Nece işlər?";
+const result = text.match(/\w+/g);
+console.log(result);
+Nəticə:
+["Salam", "dünya_123", "Nece", "işlər"]
+İzah:
+"Salam" - Bütün hərflərdən ibarət olduğu üçün \w+ ilə uyğun gəlir.
+
+"dünya_123" - Həm hərflər, həm rəqəmlər, həm də alt xətt (_) olduğu üçün tam uyğun gəlir.
+
+"Nece" - Yenə də hərflərdən ibarət olduğu üçün uyğun gəlir.
+
+"işlər" - Unicode hərfləri də \w ilə uyğun gəlir.
+
+"!" və "?" - Bu simvollar uyğun gəlmir, çünki onlar söz simvolu deyil.
+
+
 
 */

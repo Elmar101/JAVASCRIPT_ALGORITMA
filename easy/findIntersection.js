@@ -65,5 +65,5 @@ function findIntersection1(strArr) {
     return Array.from(result).length > 0 ? Array.from(result).join(",") : false;
   };
 
-  console.log(findIntersection3(["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]));
+  console.log(findIntersection3(["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]));  // 1,4,13
 
