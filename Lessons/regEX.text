@@ -86,4 +86,104 @@ RegEx izahı (/[\W_]/g):
 _ → \W alt xətti (_) daxil etmədiyi üçün onu ayrıca göstəririk.
 
 g → Global flag – bütün uyğun gələnləri əvəzləyir.
+
+b -> word boundery - sozleri sinirlayan
+"burada burda burdadir".match(/bura?da/)  // ["burada", "burda", "burdadir"]
+"burada burda burdadir".match(/\bbura?da\b/)  // ["burada", "burda"]
+
+"rerere".match(/re+/) // ["re", "re", "re"]
+"reeerere".match(/re+/) // ["reee", "re", "re"]
++ ozinden bir evelki simvol eynidirse sec
+
+"rerere".match(/(re)+/g) // ["rerere"] 
+() -> grup edir yeni karakter qrupu
+
+m flagi -> multi line
+s flagi ->  single line
+
+(evvelinebax)x(sonunabax) -> (lookbehind)x(lookahead)
+
+lookbehind: /(?<=evvelinebax) - x evvele bax
+lookahead: /(?=sonunabax) - x dan sonraya bax
+
+lookbehind ve lookahead iki cur positive ve neqativ olur (neqativi secme)
+
+ex: "quantity and qrcode.match(/.(?=u)/g) // ["q"]
+ex: "quan".match(/.(?!u)/g) // ["u", "a" , "n"]
+ex: "quqaqn".match(/.(?!q)/g)  // ["q", "q" , "q","n"]
+
+ex: "quantity and qrcode".match(/(?<=n)./g) // ["t"]
+ex: "qunans".match(/(?<!n)./g) // ["q", "u" , "n", "n"]
+
+ex 'src="http://example.com"'.match(/(?<= "src=")(.*)(?=")/g) // ["http://example.com"]
+
+* qruplara ad vermek (?<qrupname>)
+
 */
+
+
+1234567890
+123-456-7890
+123 456 7890
+(123) 456-7890
++1 123 456 7890
+
+((?<area>\+\d{1,2})[ -])?\(?(?<operator>\d{3})\)?[ -]?(?<main>\d{3})[ -]?(?<number>\d{4})/g.match("123-456-7890") // ["123-456-7890"]
+
+link : https://cs.lmu.edu/~ray/notes/regex/
+
+
+/(?<gun>\d{2})[\-\/\.](?<ay>\d{2})[\-\/\.](?<yil>\d{2,4})/g.match("12-03-2020") // ["12-03-2020"]
+
+
+[https://www.videosinif.com~videosinif]
+[https://www.kablosuzkedi.com,kablosuzkedi]
+[https://www.youtube.com/kablosuzkedi|kablosuzkedi youtube kanalı]
+
+/(?<=\[)(?<url>.*)[~,\|](?<title>.*)(?=\])/g.match("[https://www.videosinif.com~videosinif]") // ["https://www.videosinif.com~videosinif"]
+
+
+
+"appless apple applessn appl".match(/apple/g) => ["apple", "apple", "apple"]
+"appless apple applessn appl".match(/apples/gi) => ["apples", "apples"]
+"appless apple applessn appl".match(/apples?/gi) => ["apples", "apple", "apples"] // ? olada biler olmuyada biler
+"appless apple applessn appl".match(/apples+/gi) => ["appless", "appless"] //+ son karakter tekrarlana qeder gotir
+"appless apple applessn appl".match(/apples*/gi) => ["appless", "apple", "appless"] // *  = ? ve + ikisinin gordiyi is
+
+"12-123456789 , 123-123456789".match(/\d{2}-\d{4,6}/g) // ["12-123456", "23-1234"]
+"12-123456789 , 123-123456789".match(/\d{2}-\d{4,6}?/g) // ["12-123456", "23-1234"]
+"12-1234- , 123-123456-, 12-55666556656".match(/\d{2}-\d{4,6}?\-/g) // ["12-1234-", "23-123456-"]
+"12-1234- , 123-123456-, 12-12345-, 12-1234".match(/\d{2}-\d{4,6}?(?=-)/g) // ["12-1234", "23-123456", "12-12345"]
+"12-1234- , 123-123456-, 12-12345-, 12-1234".match(/\b\d{2}-\d{4,6}?(?=-)\b/g) // ["12-1234", "12-12345"]
+"inplant is good edea, plan to plant on this planet".match(/plan/g) // ["plan", "plan", "plan", "plan"]
+"inplant is good edea, plan to plant on this planet".match(/\bplan/g) // ["plan", "plan", "plan"] // inplant buradaki plan daxil deyil 
+"inplant is good edea, plan to plant on this planet".match(/\bplan\b/g) // ["plan"] -> inplant , plant, planet bunlar daxil deyil
+"inplant is good edea, plan to plant on this planet plan*".match(/\bplan/g) // ["plan", "plan"] // xusi karakterlerdekileride secir plan* kimi plan. kimi
+"inplant is good edea, plan to plant on this planet plan*".match(/\Bplan/g) // ["plan"]//inplant burdaki plant di xunki evveli plan ile boubery olmayib
+"inplant is good edea, plan to plant on this planet plan*".match(/plan\B/g)// ["plan","plan", "plan"]// plan dan basqa hamisi cunki sonu plan ile sinirlanmayib
+"inplant is good edea, plan to plant on this planet plan*".match(/\Bplan\B/g)// ["plan"]// inplant plan cunki evveli ve sonu plan ile sinirlanmayib
+
+"monday tuesday wednesday thursday friday someday inmonday".match(/\b(mon|tue|wed|thu|fri)day\b/g) // ["monday", "tuesday", "wednesday", "thursday", "friday"]
+
+* ([a-z][0-9]){5} => 5 simvol olaraq birinci simvol a-z daxil və ikinci simvol 0-9 olmalidir ex: d4d4f5f5g6g6 hghghgd4d4f5f5g6g6
+*\b([a-z][0-9]){5}\b =>5 simvol olaraq birinci simvol a-z daxil və ikinci simvol 0-9 olmalidir ex: d4d4f5f5g6g6 (jhjjjg6g6g6g6g6 bu daxil olmuyacaq \b ler var)
+
+****************
+*(?:  ) =>  qruplara elave etme
+*(?<qrupname> ) => qrupa ad ver
+*/<(\w+>).*<\/\1/g
+*/<(?<tag>\w+>).*<\/\k<tag>/g
+*(?<tag>\w+>).*<\/\1
+****************
+/<(\w+>).*<\/\1/g   =  /<(?<tag>\w+>).*<\/\k<tag>/g = (?<tag>\w+>).*<\/\1
+const str = "<b>hello</b> <i>hi</i>";
+str.match(/<(\w+>).*<\/\1/g) // ["<b>hello</b>", "<i>hi</i>"]
+str.match("/<(?<tag>\w+>).*<\/\k<tag>/g) // ["<b>hello</b>", "<i>hi</i>"]
+str.match(/<(?<tag>\w+>).*<\/\1/g) // ["<b>hello</b>", "<i>hi</i>"]
+
+
+/^(?=.{2})(?=[A-Z]).*/g.match("Abc") // ["Abc"] => ^ baslanqic (?=.{2}) baslanqic 2 simvol olacaq (?=[A-Z]) ilk simvol Boyik Herif
+/^(?=.{2})(?=[A-Z]).*/g.match("aBc") // null
+/^(?=.{2})(?=.[A-Z]).*/g.match("aBc") // ["aBc"] => ^ baslanqic (?=.{2}) baslanqic 2 simvol olacaq (?=.[A-Z]) ikinci simvol Boyik Herif
+/^(?=.{2})(?=.[A-Z]).*/g.match("baBc") // null
+/^(?=.{2})(?=.*[A-Z]).*/g.match("baBc") // ["baBc"] => ^ baslanqic (?=.{2}) baslanqic 2 simvol olacaq (?=.[A-Z]) hansisa simvol Boyik Herif

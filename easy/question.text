@@ -1,6 +1,6 @@
 ** First Question (User name validation)
   --------------
-
+/***************************************************************************************/
 1.the user name is between 4 and 25 characters
 2.it must start with a letter
 3.it can only contain letters, number , and underscore charachter
@@ -13,21 +13,22 @@ solition: userValidation.js
 
 ** Second Question (Longest Word in sentence)
   ---------------
+/***************************************************************************************/
 1. ignore punctuation and assume sentence will not be empty
 
 
 
 ** Third Question (Factorial)
   --------------
-
+/***************************************************************************************/
 
 ** Fourth Question (Reverse a string)
   --------------
-
+/***************************************************************************************/
 
 ** Fifth Question (find intersection)
   --------------
-
+/***************************************************************************************/
   Have the function findIntersection(strArr) read the array of strings stored in strArr which will contain two elements: 
   the first element will represent a list of comma-separated numbers sorted in ascending order, 
   the second element will represent a second list of comma-separated numbers (also sorted). 
@@ -38,7 +39,7 @@ solition: userValidation.js
 
 ** Sixth Question (Questions Mark)
   --------------
-
+/***************************************************************************************/
   Have the function QuestionsMarks(str) take the str string parameter, which will contain single digit numbers, letters, and question marks, 
   and check if there are exactly 3 question marks between every pair of two numbers that add up to 10. 
   If so, then your program should return the string true, otherwise it should return the string false. 
@@ -53,7 +54,7 @@ solition: userValidation.js
 
 ** Question seven (Letter Changes)
   --------------
-
+/***************************************************************************************/
   Using the JavaScript, have the function letterChanges(str) take the str parameter being passed and modify it using the following algorithm
 
   1. Replace every letter in the string with the letter following it in the alphabetic (ie c becomes d , z becomes a)
@@ -64,14 +65,15 @@ solition: userValidation.js
 
 ** Question eight (Letter Capitalize)
    --------------
-
+/***************************************************************************************/
     Using the JavaScript, have the function letterCapitalize(str)  take the str parameter  being passed and Capitalize the first letter of each word
     words will be separated by only one space
 
 
 
 ** Question nine (Simple Symbols)
-   --------------                                                                     
+   --------------
+/***************************************************************************************/                                                                     
 *  Using the JavaScript language, have the function SimpleSymbols(str) take the str    *
 *  parameter being passed and determine if it is an acceptable sequence by either      *
 *  returning the string true or false. The str parameter will be composed of + and =   *
@@ -84,13 +86,15 @@ solition: userValidation.js
 
  * Question ten (Alphabet Soup)
    --------------
- * Have the function alphabetSoup(str) take the str string parameter being passed and return the string with the letters in alphabetical order (ie. hello becomes ehllo). 
+   /***************************************************************************************/
+ * Have the function alphabetSoup(str) take the str string parameter being passed and return the 
+ * string with the letters in alphabetical order (ie. hello becomes ehllo). 
  * Assume numbers and punctuation symbols will not be included in the string.
 
 
  ** Question eleven (AB Check)
    --------------
-
+/***************************************************************************************/
 # Have the function ABCheck(str) take the str parameter being passed and return
 # the string true if the characters a and b are separated by exactly 3 places
 # anywhere in the string at least once (ie. "lane borrowed" would result in
@@ -102,6 +106,7 @@ solition: userValidation.js
 
  ** Question twelve (OX Check)
    --------------
+/***************************************************************************************/
 *                                                                                      *
 *  Ex OX                                                                               *
 *  Using the JavaScript language, have the function ExOh(str) take the str parameter   *
@@ -112,14 +117,16 @@ solition: userValidation.js
 
 
 
-** Questio thirteen (Word Count)                                                                          *
+** Questio thirteen (Word Count) 
+/***************************************************************************************/                                                                         *
 *  Using the JavaScript language, have the function WordCount(str) take the str        *
 *  string parameter being passed and return the number of words the string contains    *
 *  (ie. "Never eat shredded wheat" would return 4). Words will be separated by single  *
 *  spaces.    
 
 
-** Questio fourteen (Vowel Count)  
+** Questio fourteen (Vowel Count)
+/***************************************************************************************/  
 Return the number (count) of vowels in the given string.
 We will consider a, e, i, o, u as vowels for this Kata (but not y).
 The input string will only consist of lower case letters and/or spaces.
@@ -128,7 +135,7 @@ The input string will only consist of lower case letters and/or spaces.
 
 ** Question fifteen (isPalindrome)  
  --------------
-
+/***************************************************************************************/
 Have the function Palindrome(str) take the str parameter being passed and return the string true if the parameter is a palindrome, 
 the string false otherwise. Words will be separated by single spaces.
 
@@ -136,7 +143,7 @@ the string false otherwise. Words will be separated by single spaces.
 
 ** Question sixteen (Arith Geo)
  --------------
-
+/***************************************************************************************/
 *  Arith Geo                                                                           *
 *  Using the JavaScript language, have the function ArithGeo(arr) take the array of    *
 *  numbers stored in arr and return the string "Arithmetic" if the sequence follows    *
@@ -154,7 +161,7 @@ the string false otherwise. Words will be separated by single spaces.
 
 ** Question seventeen (Array Addition)
  --------------
-
+/***************************************************************************************/
  *  Array Addition I                                                                    *
 *  Using the JavaScript language, have the function ArrayAdditionI(arr) take the array *
 *  of numbers stored in arr and return the string true if any combination of numbers   *
@@ -165,8 +172,32 @@ the string false otherwise. Words will be separated by single spaces.
 
 
 
-** Question eighteen (Array Addition)
+
+** Question eighteen (Letter Count)
  --------------
+/***************************************************************************************/
+*                                                                                      *
+*  Letter Count I                                                                      *
+*  Have the function LetterCountI(str) take the str parameter being passed and return  *
+*  the first word with the greatest number of repeated letters. For example:           *
+*  "Today, is the greatest day ever!" should return greatest because it has 2 e's      *
+*  (and 2 t's) and it comes before ever which also has 2 e's. If there are no words    *
+*  with repeating letters return <b>-1</b>. Words will be separated by spaces.         *
+
+
+
+** Question nineteen (Letter Count)
+ --------------
+/***************************************************************************************/
+*                                                                                      *
+*                  CODERBYTE BEGINNER CHALLENGE                                        *
+*                                                                                      *
+*  Division Stringified                                                                *
+*  Using the JavaScript language, have the function DivisionStringified(num1,num2)     *
+*  take both parameters being passed, divide num1 by num2, and return the result as    *
+*  a string with properly formatted commas. If an answer is only 3 digits long,        *
+*  return the number with no commas (ie. 2 / 3 should output "1"). For example:        *
+*  if num1 is 123456789 and num2 is 10000 the output should be "12,345".   
  
 
  
