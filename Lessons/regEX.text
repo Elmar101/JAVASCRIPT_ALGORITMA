@@ -187,3 +187,15 @@ str.match(/<(?<tag>\w+>).*<\/\1/g) // ["<b>hello</b>", "<i>hi</i>"]
 /^(?=.{2})(?=.[A-Z]).*/g.match("aBc") // ["aBc"] => ^ baslanqic (?=.{2}) baslanqic 2 simvol olacaq (?=.[A-Z]) ikinci simvol Boyik Herif
 /^(?=.{2})(?=.[A-Z]).*/g.match("baBc") // null
 /^(?=.{2})(?=.*[A-Z]).*/g.match("baBc") // ["baBc"] => ^ baslanqic (?=.{2}) baslanqic 2 simvol olacaq (?=.[A-Z]) hansisa simvol Boyik Herif
+
+* /\u0061/g => a
+
+"testa na".match(/testa/g) // ["a", "a"]
+
+*[\u0061-\u0095]/g => a-z
+
+* xususi karakterleri unicode ile tuta bilersen
+*\b string baslanqicini ve sonunu bura daxildi herf ve reqemler ozel karakterler deyil
+
+"test test* intest" .match(/\btest\b/g) // ["test", "test"] => intest daxil deyil
+
