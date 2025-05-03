@@ -1,0 +1,8 @@
+const num = 1234;
+Reqemleri Stringe chevirmek üçün  => num.toString() // '1234'
+Reqemleri Arraye chevirmek üçün => num.toString().split('') // ['1', '2', '3', '4']
+
+const num = 1234122;
+const obj = {};
+Reqemleri Objecte Chevirmek üçün => num.toString().split('').forEach((item) => obj[item] =bj[item] ? bj[item] + 1 : item) 
+console.log(obj); // { '1': 2, '2': 3, '3': 1, '4': 1 }

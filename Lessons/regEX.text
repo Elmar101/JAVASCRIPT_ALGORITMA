@@ -115,7 +115,7 @@ ex: "quqaqn".match(/.(?!q)/g)  // ["q", "q" , "q","n"]
 ex: "quantity and qrcode".match(/(?<=n)./g) // ["t"]
 ex: "qunans".match(/(?<!n)./g) // ["q", "u" , "n", "n"]
 
-ex 'src="http://example.com"'.match(/(?<= "src=")(.*)(?=")/g) // ["http://example.com"]
+ex 'src="http://example.com"'.match(/(?<= src=")(.*)(?=")/g) // ["http://example.com"]
 
 * qruplara ad vermek (?<qrupname>)
 
